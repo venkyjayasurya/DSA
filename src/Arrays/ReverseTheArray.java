@@ -1,4 +1,4 @@
-package MyPackage;
+package Arrays;
 
 //Write a program to reverse an array or string
 public class ReverseTheArray {
@@ -27,7 +27,7 @@ public class ReverseTheArray {
         int arr[] = {1,2,3,4,5,6};
         printArray(arr, 6);
         reverseArray(arr,0,5);
-        System.out.println("Reveresed Array is")
+        System.out.println("Reversed Array is");
         printArray(arr, 6);
     }
 }
