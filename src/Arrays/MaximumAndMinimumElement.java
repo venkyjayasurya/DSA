@@ -10,7 +10,7 @@ public class MaximumAndMinimumElement {
     static Pair getMinMax(int arr[], int n){
         Pair minmax = new Pair();
         int i;
-//        If array has even number of elements then initalize the first two elements as minimum and maximum
+//        If array has even number of elements then initialize the first two elements as minimum and maximum
         if(n%2 == 0){
             if(arr[0] > arr[1]){
                 minmax.max = arr[0];
@@ -60,4 +60,3 @@ public class MaximumAndMinimumElement {
         System.out.println("Maximum element is:" + minmax.max);
     }
 }
-
