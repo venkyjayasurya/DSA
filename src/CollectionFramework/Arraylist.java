@@ -1,3 +1,5 @@
+package CollectionFramework;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -59,7 +61,7 @@ public class Arraylist {
           System.out.println("Tharun is not present");
         }
 
-//        Iterate in Arraylist
+//        Iterate in CollectionFramework.Arraylist
         System.out.println("===Iterating with normal for loop===");
         for(int i=0; i<list1.size(); i++){
           System.out.println(list1.get(i));

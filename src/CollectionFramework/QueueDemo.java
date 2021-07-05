@@ -1,3 +1,5 @@
+package CollectionFramework;
+
 import java.util.PriorityQueue;
 
 public class QueueDemo {

@@ -2,7 +2,6 @@ package Arrays;
 
 //Write a program to reverse an array or string
 public class ReverseTheArray {
-
 //    Function to reverse an array from start to end
     static void reverseArray(int arr[], int start, int end){
         int temp;
@@ -14,7 +13,6 @@ public class ReverseTheArray {
 //        Recursive Function
         reverseArray(arr, start+1, end-1);
     }
-
 
 //    Function to print an array
     static void printArray(int arr[], int size){
