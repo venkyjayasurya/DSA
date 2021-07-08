@@ -1,3 +1,11 @@
+/*
+ * Linear search is rarely used practically because other search algorithms
+ * such as the binary search algorithm and hash tables allow significantly
+ * faster-searching comparison to Linear search.
+ *
+ * Time Complexity O(n)
+ * */
+
 package Algorithms.Searching;
 
 import java.util.Scanner;
@@ -39,3 +47,5 @@ public class LinearSearch {
             System.out.println("Element is present at index: " + result);
     }
 }
+
+
