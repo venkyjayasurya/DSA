@@ -10,6 +10,8 @@ package Algorithms.Sorting;
 * Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
 * */
 
+import java.util.Scanner;
+
 public class BubbleSort {
 
     public static void bubbleSort(int[] arr) {
@@ -30,7 +32,20 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("enter number of elements");
+        int size = in.nextInt();
+
+        int[] arr = new int[size];
+
+        System.out.println("enter elements");
+        for (int i = 0; i < size; i++) {
+            arr[i] = in.nextInt();
+        }
+
+//        int[] arr = {64, 34, 25, 12, 22, 11, 90};
         printArray(arr);
         bubbleSort(arr);
         System.out.println("Sorted array is");
