@@ -18,6 +18,11 @@ package Algorithms.Sorting;
      4. Merge the two halves sorted in step 2 and 3:
              Call merge(arr, l, m, r)
  *
+ *
+ * Time Complexity: Merge Sort is a recursive algorithm and time complexity
+ * can be expressed as following recurrence relation.
+        T(n) = 2T(n/2) + θ(n)
+ *
  * */
 
 
