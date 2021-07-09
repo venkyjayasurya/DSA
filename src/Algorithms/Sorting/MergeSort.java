@@ -36,7 +36,7 @@ public class MergeSort {
 //        Copy Data to temp arrays
         for (int i = 0; i < n1; i++)
             LeftArr[i] = arr[left + i];
-        for (int j = 0; j < n1; j++)
+        for (int j = 0; j < n2; j++)
             RightArr[j] = arr[middle + 1 + j];
 
 //        Merge the temporary arrays
@@ -45,11 +45,10 @@ public class MergeSort {
 //        Initial index of merged subarray
         int k = left;
         while (i < n1 && j < n2) {
-            if(LeftArr[i] <= RightArr[j]){
+            if (LeftArr[i] <= RightArr[j]) {
                 arr[k] = LeftArr[i];
                 i++;
-            }
-            else{
+            } else {
                 arr[k] = RightArr[j];
                 j++;
             }
@@ -57,14 +56,14 @@ public class MergeSort {
         }
 
 //        Copy remaining elements of LeftArr[] if any
-        while(i<=n1){
+        while (i < n1) {
             arr[k] = LeftArr[i];
             i++;
             k++;
         }
 
 //        Copy remaining elements of LeftArr[] if any
-        while(j<=n2){
+        while (j < n2) {
             arr[k] = RightArr[j];
             j++;
             k++;
