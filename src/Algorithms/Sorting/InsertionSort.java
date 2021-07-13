@@ -28,8 +28,8 @@ public class InsertionSort {
                 System.out.printf(" i = %d, j = %d, temp = %d \n", i,j,temp);
             }
             arr[j+1] = temp;
-            System.out.printf(" i = %d, j = %d, temp = %d \n", i,j,temp);
             printArray(arr);
+            System.out.printf(" i = %d, j = %d, temp = %d \n", i,j,temp);
             System.out.println();
         }
     }
