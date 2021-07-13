@@ -3,6 +3,12 @@ package Algorithms.Sorting;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/*
+* In selection sort we just search for the minimum element in the unsorted list and swap the elements
+*
+* Time Complexity of best and worst case is: O(n^2)
+* */
+
 class SelectionSort {
     public static void selectionSort(int[] arr) {
         int n = arr.length;
