@@ -7,13 +7,13 @@ class SelectionSort {
     public static void selectionSort(int[] arr) {
         int n = arr.length;
         for(int i=0; i< n-1; i++){
-            int min = i;            //Initially min is a[0]
-            for(int j=i+1; j<n; j++){
+            int min = i;                    //Initialize min is a[0]
+            for(int j=i+1; j<n; j++){       //Find the minimum value in unsorted list
                 if(arr[j] < arr[min]){
                     min = j;
                 }
             }
-            if(min != i){       //Swap the values arr[i] , arr[min]
+            if(min != i){                   //Swap the values arr[i] , arr[min]
                 int temp = arr[i];
                 arr[i] = arr[min];
                 arr[min] = temp;
