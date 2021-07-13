@@ -25,21 +25,23 @@ public class InsertionSort {
                 arr[j+1] = arr[j];          // Swap the elements if the previous element is greater than current
                 j--;
                 printArray(arr);
-                System.out.printf(" i = %d, j = %d, temp = %d", i,j,temp);
+                System.out.printf(" i = %d, j = %d, temp = %d \n", i,j,temp);
             }
             arr[j+1] = temp;
             printArray(arr);
+            System.out.println();
         }
     }
 
     public static void printArray(int[] arr) {
-        for (int i : arr) System.out.print(i + " ");
-        System.out.println();
+        for (int i : arr) System.out.print(i + "   ");
+//        System.out.println();
     }
 
     public static void main(String[] args){
         int[] arr = {5, 4, 10, 1 ,6, 2};
         printArray(arr);
+        System.out.println();
         Sort(arr);
         printArray(arr);
     }
