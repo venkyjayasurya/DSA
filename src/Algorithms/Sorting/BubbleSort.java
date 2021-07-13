@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class BubbleSort {
     public static void bubbleSort(int[] arr) {
-        int n = arr.length - 1;
+        int n = arr.length ;
         /*
         * For counting no of passes around the array
         * No need to check last pass, as the elements are already sorted
@@ -24,24 +24,33 @@ public class BubbleSort {
             /*
             * For comparing elements inside the array
             * n-1-i -> In Bubble sort the last elements are automatically in sorted order due to previous passes
+            * so we can minus i from the iteration count as write as n-1-i
+            * or we need not to check last values, no of last values are equal to i for each pass
             */
-            for (int j = 0; j < n - 1 - i; j++) {
+            for (int j = 0; j < n - 1 - i ; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                     flag = 1;
+                    printArray(arr);
                 }
             }
-            if(flag == 0)       //To optimize the code
+            /*
+            * If the flag value is 0 then no values are swapped in the iteration
+            * i.e, the array is already in sorted order
+            * To optimize the code
+            * */
+
+            if(flag == 0)
                 break;
         }
     }
 
     public static void printArray(int[] arr) {
-        for (int i : arr) System.out.println(i);
+        for (int i : arr) System.out.print(i + " ");
+        System.out.println();
     }
-
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -64,7 +73,7 @@ public class BubbleSort {
 }
 
 /*
-* Example Array  [16, 14, 5, 6, 8]
+* Example1 :: Array  [16, 14, 5, 6, 8]
 *
 * Pass 1 -> i=0; j=0  [14, 16, 5, 6, 8]
 *           i=0; j=1  [14, 5, 16, 6, 8]
