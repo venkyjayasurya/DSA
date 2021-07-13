@@ -50,18 +50,14 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-
         Scanner in = new Scanner(System.in);
         System.out.println("enter number of elements");
         int size = in.nextInt();
-
         int[] arr = new int[size];
-
         System.out.println("enter elements");
         for (int i = 0; i < size; i++) {
             arr[i] = in.nextInt();
         }
-
 //        int[] arr = {64, 34, 25, 12, 22, 11, 90};
         printArray(arr);
         bubbleSort(arr);
