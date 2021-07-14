@@ -33,6 +33,7 @@ public class MergeSort {
         // j is the pointer of upperbound subarray
         // k is the pointer for the sorted array
 
+        // Initial indexes of first and second sub arrays
         int i= LowerBound;
         int j=mid+1;
         int k=LowerBound;
@@ -67,7 +68,6 @@ public class MergeSort {
             }
         }
 
-
         //Copy all the elements of sortedArray to unsorted array
         for(k=LowerBound; k<=UpperBound; k++){
             arr[k] = sortedArr[k];
@@ -98,52 +98,3 @@ public class MergeSort {
         printArray(arr);
     }
 }
-
-
-/*
-*
-* //        Merge two sub arrays of arr[]
-//        First Subarray is arr[l ... m]
-//        Second Subarray is arr[m ... r]
-        int n1 = mid - LowerBound + 1;
-        int n2 = UpperBound - mid;
-
-//        Create temporary arrays
-        int[] LowerBoundArr = new int[n1];
-        int[] UpperBoundArr = new int[n2];
-
-//        Copy Data to temp arrays
-        for (int i = 0; i < n1; i++)
-            LowerBoundArr[i] = arr[LowerBound + i];
-        for (int j = 0; j < n2; j++)
-            UpperBoundArr[j] = arr[mid + 1 + j];
-
-//        Merge the temporary arrays
-//        Initial indexes of first and second sub arrays
-        int i = 0, j = 0;
-//        Initial index of merged subarray
-        int k = LowerBound;
-        while (i < n1 && j < n2) {
-            if (LowerBoundArr[i] <= UpperBoundArr[j]) {
-                arr[k] = LowerBoundArr[i];
-                i++;
-            } else {
-                arr[k] = UpperBoundArr[j];
-                j++;
-            }
-            k++;
-        }
-
-//        Copy remaining elements of LowerBoundArr[] if any
-        while (i < n1) {
-            arr[k] = LowerBoundArr[i];
-            i++;
-            k++;
-        }
-
-//        Copy remaining elements of LowerBoundArr[] if any
-        while (j < n2) {
-            arr[k] = UpperBoundArr[j];
-            j++;
-            k++;
-        }*/
