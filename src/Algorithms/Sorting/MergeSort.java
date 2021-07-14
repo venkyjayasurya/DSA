@@ -18,6 +18,7 @@ package Algorithms.Sorting;
      4. Merge the two halves sorted in step 2 and 3:
              Call merge(arr, l, m, r)
  *
+ * The Worst Case and Best case time complexity of the mergesort is O(n log n)
  *
  * Time Complexity: Merge Sort is a recursive algorithm and time complexity
  * can be expressed as following recurrence relation.
@@ -35,7 +36,7 @@ public class MergeSort {
         int i= LowerBound;
         int j=mid+1;
         int k=LowerBound;
-        int[UpperBound] sortedArr;
+        int[] sortedArr = new int[UpperBound];
 
         while(i<=mid && j<= UpperBound){
             if(arr[i] <= arr[j]){
@@ -52,14 +53,21 @@ public class MergeSort {
             while(j<= UpperBound){
                 sortedArr[k] = arr[j];
                 j++;
+                k++;
             }
         }else{
             while(i<= mid){
                 sortedArr[k] = arr[i];
                 i++;
+                k++;
             }
         }
-        k++;
+
+
+        //Copy all the elements of sortedArray to unsorted array
+        for(k=LowerBound; k<=UpperBound; k++){
+            arr[k] = sortedArr[k];
+        }
 
 
 
