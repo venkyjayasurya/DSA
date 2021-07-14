@@ -57,6 +57,7 @@ public class MergeSort {
 
         //        Copy remaining elements of second sub array if any
         if (i > mid) {
+            //        Copy remaining elements of second sub array if any
             while (j <= UpperBound) {
                 sortedArr[k] = arr[j];
                 j++;
