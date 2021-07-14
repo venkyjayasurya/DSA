@@ -35,14 +35,14 @@ public class QuickSort {
             }
 
             if(start < end){
-//            swap(a[start], a[end]);
+//            swap(arr[start], arr[end]);
                 int temp = arr[start];
                 arr[start] = arr[end];
                 arr[end] = temp;
             }
         }
 
-//        swap(a[lb] , a[end]
+//        swap(arr[lowerBound] , arr[end]
         int temp = arr[lowerBound];
         arr[lowerBound] = arr[end];
         arr[end] = temp;
@@ -58,8 +58,16 @@ public class QuickSort {
         }
     }
 
+    public static void printArray(int[] arr) {
+        for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+    }
+
     public static void main(String[] args){
         int[] arr = {7, 6, 10, 5, 9, 2, 1, 15, 7};
+        printArray(arr);
         Sort(arr, 0, arr.length-1);
+        System.out.println("The Sorted Array is");
+        printArray(arr);
     }
 }
