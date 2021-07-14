@@ -4,19 +4,22 @@ package Algorithms.Sorting;
  * Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves,
  * calls itself for the two halves, and then merges the two sorted halves.
  * The merge() function is used for merging two halves.
- * The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are
+ * The merge(arr, lowerBound, mid, upperBound) is a key process
+ * that assumes that arr[lowerBound..mid] and arr[mid+1..upperBound] are
  * sorted and merges the two sorted sub-arrays into one.
+
  * Simple Algorithm:
- * MergeSort(arr[], l,  r)
-    If r > l
+ * MergeSort(arr[], lowerBound,  upperBound)
+    If (LowerBound < UpperBound)
      1. Find the mid point to divide the array into two halves:
-             mid m = l+ (r-l)/2
+             mid = (lowerBound + UpperBound )/2
      2. Call mergeSort for first half:
-             Call mergeSort(arr, l, m)
+             Call mergeSort(arr, lowerBound, mid)
      3. Call mergeSort for second half:
-             Call mergeSort(arr, m+1, r)
+             Call mergeSort(arr, mid+1, UpperBound)
      4. Merge the two halves sorted in step 2 and 3:
-             Call merge(arr, l, m, r)
+             Call merge(arr, lowerBound, mid, upperBound)
+ *
  *
  * The Worst Case and Best case time complexity of the mergesort is O(n log n)
  *
@@ -34,18 +37,18 @@ public class MergeSort {
         // k is the pointer for the sorted array
 
         // Initial indexes of first and second sub arrays
-        int i= LowerBound;
-        int j=mid+1;
-        int k=LowerBound;
+        int i = LowerBound;
+        int j = mid + 1;
+        int k = LowerBound;
 
         //        Create temporary array
         int[] sortedArr = new int[UpperBound];
 
-        while(i<=mid && j<= UpperBound){
-            if(arr[i] <= arr[j]){
+        while (i <= mid && j <= UpperBound) {
+            if (arr[i] <= arr[j]) {
                 sortedArr[k] = arr[i];
                 i++; //Increase the first subarray pointer value
-            }else{
+            } else {
                 sortedArr[k] = arr[j];
                 j++;  //Increase the second subarray pointer value
             }
@@ -53,15 +56,15 @@ public class MergeSort {
         }
 
         //        Copy remaining elements of second sub array if any
-        if(i>mid){
-            while(j<= UpperBound){
+        if (i > mid) {
+            while (j <= UpperBound) {
                 sortedArr[k] = arr[j];
                 j++;
                 k++;
             }
-        }else{
+        } else {
             //        Copy remaining elements of first sub array if any
-            while(i<= mid){
+            while (i <= mid) {
                 sortedArr[k] = arr[i];
                 i++;
                 k++;
@@ -69,7 +72,7 @@ public class MergeSort {
         }
 
         //Copy all the elements of sortedArray to unsorted array
-        for(k=LowerBound; k<=UpperBound; k++){
+        for (k = LowerBound; k <= UpperBound; k++) {
             arr[k] = sortedArr[k];
         }
     }
