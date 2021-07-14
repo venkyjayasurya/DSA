@@ -9,8 +9,8 @@ package Algorithms.Sorting;
  * Simple Algorithm:
  * MergeSort(arr[], l,  r)
     If r > l
-     1. Find the middle point to divide the array into two halves:
-             middle m = l+ (r-l)/2
+     1. Find the mid point to divide the array into two halves:
+             mid m = l+ (r-l)/2
      2. Call mergeSort for first half:
              Call mergeSort(arr, l, m)
      3. Call mergeSort for second half:
@@ -27,63 +27,63 @@ package Algorithms.Sorting;
 
 
 public class MergeSort {
-    public static void merge(int[] arr, int left, int middle, int right) {
+    public static void merge(int[] arr, int LowerBound, int mid, int UpperBound) {
 //        Merge two sub arrays of arr[]
 //        First Subarray is arr[l ... m]
 //        Second Subarray is arr[m ... r]
-        int n1 = middle - left + 1;
-        int n2 = right - middle;
+        int n1 = mid - LowerBound + 1;
+        int n2 = UpperBound - mid;
 
 //        Create temporary arrays
-        int[] LeftArr = new int[n1];
-        int[] RightArr = new int[n2];
+        int[] LowerBoundArr = new int[n1];
+        int[] UpperBoundArr = new int[n2];
 
 //        Copy Data to temp arrays
         for (int i = 0; i < n1; i++)
-            LeftArr[i] = arr[left + i];
+            LowerBoundArr[i] = arr[LowerBound + i];
         for (int j = 0; j < n2; j++)
-            RightArr[j] = arr[middle + 1 + j];
+            UpperBoundArr[j] = arr[mid + 1 + j];
 
 //        Merge the temporary arrays
 //        Initial indexes of first and second sub arrays
         int i = 0, j = 0;
 //        Initial index of merged subarray
-        int k = left;
+        int k = LowerBound;
         while (i < n1 && j < n2) {
-            if (LeftArr[i] <= RightArr[j]) {
-                arr[k] = LeftArr[i];
+            if (LowerBoundArr[i] <= UpperBoundArr[j]) {
+                arr[k] = LowerBoundArr[i];
                 i++;
             } else {
-                arr[k] = RightArr[j];
+                arr[k] = UpperBoundArr[j];
                 j++;
             }
             k++;
         }
 
-//        Copy remaining elements of LeftArr[] if any
+//        Copy remaining elements of LowerBoundArr[] if any
         while (i < n1) {
-            arr[k] = LeftArr[i];
+            arr[k] = LowerBoundArr[i];
             i++;
             k++;
         }
 
-//        Copy remaining elements of LeftArr[] if any
+//        Copy remaining elements of LowerBoundArr[] if any
         while (j < n2) {
-            arr[k] = RightArr[j];
+            arr[k] = UpperBoundArr[j];
             j++;
             k++;
         }
     }
 
-    public static void sort(int[] arr, int left, int right) {
-        if (left < right) {
-//            Find the middle value
-            int middle = left + (right - left) / 2;
+    public static void mergeSort(int[] arr, int LowerBound, int UpperBound) {
+        if (LowerBound < UpperBound) {
+//            Find the mid value
+            int mid = LowerBound + (UpperBound - LowerBound) / 2;
 //            Sort first and second halves
-            sort(arr, left, middle);
-            sort(arr, middle + 1, right);
+            mergeSort(arr, LowerBound, mid);
+            mergeSort(arr, mid + 1, UpperBound);
 //            Now Merge two sorted values
-            merge(arr, left, middle, right);
+            merge(arr, LowerBound, mid, UpperBound);
         }
     }
 
@@ -95,7 +95,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {12, 11, 13, 5, 6, 7};
         printArray(arr);
-        sort(arr, 0, arr.length - 1);
+        mergeSort(arr, 0, arr.length - 1);
         printArray(arr);
     }
 }
