@@ -1,7 +1,7 @@
 package Algorithms.Sorting;
 
 /*
-*
+* Quick Sort is also called as Partition exchange method;
 * Quick Sort is based on divide and conquer technique
 * The Array is divided into sub arrays
 *
@@ -11,10 +11,55 @@ package Algorithms.Sorting;
 *                                 key
 *            {  Partion 1 }    |  Pivot  |   {  Partion 2  }
 *           values < pivot                    values > pivot
+*
+*
+* Time Complexity:
+*       Worst Case              -> O(n^2)
+*       Best or Average Case    -> O( n log n )
 * */
 
 public class QuickSort {
-    public static void main(String[] args){
 
+    public static int partition(int[] arr, int lowerBound, int upperBound){
+        int pivot = arr[lowerBound];
+        int start = lowerBound;
+        int end = upperBound;
+
+        while(start < end){
+            while(arr[start] <= pivot){
+                start++;
+            }
+
+            while(arr[end] > pivot){
+                end--;
+            }
+
+            if(start < end){
+//            swap(a[start], a[end]);
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+            }
+        }
+
+//        swap(a[lb] , a[end]
+        int temp = arr[lowerBound];
+        arr[lowerBound] = arr[end];
+        arr[end] = temp;
+        return end;
+    }
+
+
+    public static void Sort(int[] arr, int lowerBound, int upperBound){
+        if(lowerBound < upperBound){
+            int loc = partition(arr, lowerBound, upperBound);
+            Sort(arr, lowerBound, loc-1);
+            Sort(arr, loc+1, upperBound);
+        }
+    }
+
+    public static void main(String[] args){
+        int[] arr = {7, 6, 10, 5, 9, 2, 1, 15, 7};
+        Sort(arr, 0, arr.length-1);
     }
 }
