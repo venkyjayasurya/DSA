@@ -17,6 +17,8 @@ package Algorithms.Sorting;
 *       Best or Average Case    -> O( n log n )
 * */
 
+import java.util.Scanner;
+
 public class QuickSort {
 
     public static int partition(int[] arr, int lowerBound, int upperBound)
@@ -25,8 +27,7 @@ public class QuickSort {
         int i = (lowerBound-1); // index of smaller element
         for (int j=lowerBound; j<upperBound; j++)
         {
-            // If current element is smaller than or
-            // equal to pivot
+            // If current element is smaller than or equal to pivot
             if (arr[j] <= pivot)
             {
                 i++;
@@ -62,7 +63,15 @@ public class QuickSort {
     }
 
     public static void main(String[] args){
-        int[] arr = {7, 6, 10, 5, 9, 2, 1, 15, 7};
+//        int[] arr = {7, 6, 10, 5, 9, 2, 1, 15, 7};
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter number of elements");
+        int size = in.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter elements");
+        for (int i = 0; i < size; i++) {
+            arr[i] = in.nextInt();
+        }
         printArray(arr);
         Sort(arr, 0, (arr.length) - 1);
         System.out.println("The Sorted Array is");
