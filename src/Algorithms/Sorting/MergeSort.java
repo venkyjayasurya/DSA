@@ -42,7 +42,7 @@ public class MergeSort {
         int k = LowerBound;
 
         //        Create temporary array
-        int[] sortedArr = new int[UpperBound];
+        int[] sortedArr = new int[arr.length];
 
         while (i <= mid && j <= UpperBound) {
             if (arr[i] <= arr[j]) {
@@ -80,7 +80,7 @@ public class MergeSort {
     public static void mergeSort(int[] arr, int LowerBound, int UpperBound) {
         if (LowerBound < UpperBound) {
 //            Find the mid value
-            int mid = LowerBound + (UpperBound - LowerBound) / 2;
+            int mid = (LowerBound + UpperBound)  / 2;
 //            Sort first and second halves
             mergeSort(arr, LowerBound, mid);
             mergeSort(arr, mid + 1, UpperBound);
@@ -98,6 +98,7 @@ public class MergeSort {
         int[] arr = {12, 11, 13, 5, 6, 7};
         printArray(arr);
         mergeSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted Array is");
         printArray(arr);
     }
 }
