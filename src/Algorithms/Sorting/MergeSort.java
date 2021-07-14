@@ -28,7 +28,72 @@ package Algorithms.Sorting;
 
 public class MergeSort {
     public static void merge(int[] arr, int LowerBound, int mid, int UpperBound) {
-//        Merge two sub arrays of arr[]
+        //i is the pointer for the lowerbound subarray
+        // j is the pointer of upperbound subarray
+        // k is the pointer for the sorted array
+
+        int i= LowerBound;
+        int j=mid+1;
+        int k=LowerBound;
+        int[UpperBound] sortedArr;
+
+        while(i<=mid && j<= UpperBound){
+            if(arr[i] <= arr[j]){
+                sortedArr[k] = arr[i];
+                i++; //Increase the first subarray pointer value
+            }else{
+                sortedArr[k] = arr[j];
+                j++;  //Increase the second subarray pointer value
+            }
+            k++;    //Increase the sorted array pointer value
+        }
+
+        if(i>mid){  //If first sub array is inserted and second sub array values are not inserted
+            while(j<= UpperBound){
+                sortedArr[k] = arr[j];
+                j++;
+            }
+        }else{
+            while(i<= mid){
+                sortedArr[k] = arr[i];
+                i++;
+            }
+        }
+        k++;
+
+
+
+    }
+
+    public static void mergeSort(int[] arr, int LowerBound, int UpperBound) {
+        if (LowerBound < UpperBound) {
+//            Find the mid value
+            int mid = LowerBound + (UpperBound - LowerBound) / 2;
+//            Sort first and second halves
+            mergeSort(arr, LowerBound, mid);
+            mergeSort(arr, mid + 1, UpperBound);
+//            Now Merge two sorted values
+            merge(arr, LowerBound, mid, UpperBound);
+        }
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+        printArray(arr);
+        mergeSort(arr, 0, arr.length - 1);
+        printArray(arr);
+    }
+}
+
+
+/*
+*
+* //        Merge two sub arrays of arr[]
 //        First Subarray is arr[l ... m]
 //        Second Subarray is arr[m ... r]
         int n1 = mid - LowerBound + 1;
@@ -72,30 +137,4 @@ public class MergeSort {
             arr[k] = UpperBoundArr[j];
             j++;
             k++;
-        }
-    }
-
-    public static void mergeSort(int[] arr, int LowerBound, int UpperBound) {
-        if (LowerBound < UpperBound) {
-//            Find the mid value
-            int mid = LowerBound + (UpperBound - LowerBound) / 2;
-//            Sort first and second halves
-            mergeSort(arr, LowerBound, mid);
-            mergeSort(arr, mid + 1, UpperBound);
-//            Now Merge two sorted values
-            merge(arr, LowerBound, mid, UpperBound);
-        }
-    }
-
-    public static void printArray(int[] arr) {
-        for (int i : arr) System.out.print(i + " ");
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {12, 11, 13, 5, 6, 7};
-        printArray(arr);
-        mergeSort(arr, 0, arr.length - 1);
-        printArray(arr);
-    }
-}
+        }*/
