@@ -36,6 +36,8 @@ public class MergeSort {
         int i= LowerBound;
         int j=mid+1;
         int k=LowerBound;
+
+        //        Create temporary array
         int[] sortedArr = new int[UpperBound];
 
         while(i<=mid && j<= UpperBound){
@@ -49,13 +51,15 @@ public class MergeSort {
             k++;    //Increase the sorted array pointer value
         }
 
-        if(i>mid){  //If first sub array is inserted and second sub array values are not inserted
+        //        Copy remaining elements of second sub array if any
+        if(i>mid){
             while(j<= UpperBound){
                 sortedArr[k] = arr[j];
                 j++;
                 k++;
             }
         }else{
+            //        Copy remaining elements of first sub array if any
             while(i<= mid){
                 sortedArr[k] = arr[i];
                 i++;
@@ -68,9 +72,6 @@ public class MergeSort {
         for(k=LowerBound; k<=UpperBound; k++){
             arr[k] = sortedArr[k];
         }
-
-
-
     }
 
     public static void mergeSort(int[] arr, int LowerBound, int UpperBound) {
