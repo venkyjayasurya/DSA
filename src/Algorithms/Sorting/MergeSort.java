@@ -30,6 +30,8 @@ package Algorithms.Sorting;
  * */
 
 
+import java.util.Scanner;
+
 public class MergeSort {
     public static void merge(int[] arr, int LowerBound, int mid, int UpperBound) {
         //i is the pointer for the lowerbound subarray
@@ -96,7 +98,15 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {12, 11, 13, 5, 6, 7};
+//        int[] arr = {12, 11, 13, 5, 6, 7};
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter number of elements");
+        int size = in.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter elements");
+        for (int i = 0; i < size; i++) {
+            arr[i] = in.nextInt();
+        }
         printArray(arr);
         mergeSort(arr, 0, arr.length - 1);
         System.out.println("Sorted Array is");
