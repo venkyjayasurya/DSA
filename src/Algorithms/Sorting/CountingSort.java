@@ -1,7 +1,19 @@
 package Algorithms.Sorting;
 
 /*
+* It is not a comparsion sort
 * The Sort depends on the keys
+*   Counting the elements having distinct key values
+*
+* Ex: 1 0 2 1 0 1 1 5 6 7 5 4 2 2 0 0 1
+* n = 17
+* Range is from 0 to 7 => the array contains 0 to 7 numbers that is range
+* therefore K = 7
+*
+* range case 1 => 0 <= arr[i] <= k
+* range case 2 => arr[i] belongs to Integer
+*
+*
 *
 * */
 
