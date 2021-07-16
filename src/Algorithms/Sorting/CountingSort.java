@@ -70,19 +70,19 @@ public class CountingSort {
     }
 
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        System.out.println("enter number of elements");
-        int size = in.nextInt();
-        int[] arr = new int[size];
-        System.out.println("enter elements");
-        for (int i = 0; i < size; i++) {
-            arr[i] = in.nextInt();
-        }
-//        int[] arr = {5, 4, 10, 1 ,6, 2};
+//        Scanner in = new Scanner(System.in);
+//        System.out.println("enter number of elements");
+//        int size = in.nextInt();
+//        int[] arr = new int[size];
+//        System.out.println("enter elements");
+//        for (int i = 0; i < size; i++) {
+//            arr[i] = in.nextInt();
+//        }
+        int[] arr = {5, 4, 10, 1 ,6, 2};
         printArray(arr);
-
+        int size = arr.length;
         Sort(arr, size);
-//        System.out.println("Array after sorting:");
-//        printArray(arr);
+        System.out.println("Array after sorting:");
+        printArray(arr);
     }
 }
