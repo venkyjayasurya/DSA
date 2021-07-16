@@ -25,8 +25,20 @@ import java.util.Scanner;
 
 public class CountingSort {
 
-    public static void Sort(int[] arr){
-        int n = arr.length;
+    public static void Sort(int[] arr, int size){
+        int[] output = new int[size+1];
+
+        //Finding max element in the array arr
+        int max = arr[0];
+        for(int i=0; i<size; i++){
+            if(arr[i]>max)
+                max = arr[i];
+        }
+
+//        Creating an array for counting the elements
+        int[] count = new int[max+1];
+
+//        Initializing count array with all zeros
 
     }
 
@@ -46,7 +58,8 @@ public class CountingSort {
         }
 //        int[] arr = {5, 4, 10, 1 ,6, 2};
         printArray(arr);
-        Sort(arr);
+
+        Sort(arr, size);
 //        System.out.println("Array after sorting:");
 //        printArray(arr);
     }
