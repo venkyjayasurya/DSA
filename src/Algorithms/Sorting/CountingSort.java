@@ -44,7 +44,14 @@ public class CountingSort {
         }
 
 //        Storing the count of each element of the arr in the count array
+        for(int i=0; i< size; i++){
+            count[arr[i]]++;
+        }
 
+//        Storing the overall count of each element of the array
+        for(int i=1; i<=max; i++){
+            count[i] = count[i] + count[i-1];
+        }
 
 
 
