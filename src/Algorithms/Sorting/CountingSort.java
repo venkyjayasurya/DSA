@@ -13,11 +13,23 @@ package Algorithms.Sorting;
 * range case 1 => 0 <= arr[i] <= k
 *       case 2 => arr[i] belongs to Integer
 *   case 2 is not followed because Integers can be negative but counting sort is not applicable for negative numbers
+*
+* Time Complexity : O(n+k)  n = elements, k = element range
+*
+* Drawback:
+*  1.  k is not feasible because if we have the value of k as 1000 then we need to create a array of 1000 values
+*  2.  cannot be applied for negative values and floating values
 * */
 
 import java.util.Scanner;
 
 public class CountingSort {
+
+    public static void Sort(int[] arr){
+        int n = arr.length;
+
+    }
+
 
     public static void printArray(int[] arr) {
         for (int i : arr) System.out.print(i + "   ");
@@ -34,7 +46,7 @@ public class CountingSort {
         }
 //        int[] arr = {5, 4, 10, 1 ,6, 2};
         printArray(arr);
-//        Sort(arr);
+        Sort(arr);
 //        System.out.println("Array after sorting:");
 //        printArray(arr);
     }
