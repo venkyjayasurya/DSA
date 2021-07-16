@@ -14,7 +14,8 @@ package Algorithms.Sorting;
 *       case 2 => arr[i] belongs to Integer
 *   case 2 is not followed because Integers can be negative but counting sort is not applicable for negative numbers
 *
-* Time Complexity : O(n+k)  n = elements, k = element range
+* Time Complexity : O(n+k)
+*                  Where n = elements, k = element range
 *
 * Drawback:
 *  1.  k is not feasible because if we have the value of k as 1000 then we need to create a array of 1000 values
@@ -64,23 +65,23 @@ public class CountingSort {
         }
     }
 
-
     public static void printArray(int[] arr) {
         for (int i : arr) System.out.print(i + "   ");
+        System.out.println();
     }
 
     public static void main(String[] args){
-//        Scanner in = new Scanner(System.in);
-//        System.out.println("enter number of elements");
-//        int size = in.nextInt();
-//        int[] arr = new int[size];
-//        System.out.println("enter elements");
-//        for (int i = 0; i < size; i++) {
-//            arr[i] = in.nextInt();
-//        }
-        int[] arr = {5, 4, 10, 1 ,6, 2};
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter number of elements");
+        int size = in.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter elements");
+        for (int i = 0; i < size; i++) {
+            arr[i] = in.nextInt();
+        }
+//        int[] arr = {5, 4, 10, 1 ,6, 2};
         printArray(arr);
-        int size = arr.length;
+//        int size = arr.length;
         Sort(arr, size);
         System.out.println("Array after sorting:");
         printArray(arr);
