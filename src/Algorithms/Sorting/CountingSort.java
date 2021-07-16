@@ -53,10 +53,15 @@ public class CountingSort {
             count[i] = count[i] + count[i-1];
         }
 
+//        find the index of each elements of the original array in count array and place the elements in output array
+        for(int i= size-1;  i>=0; i--){
+            output[--count[arr[i]]] = arr[i];
+        }
 
-
-
-
+//        Copy elements of the output array into the original array
+        for(int i=0; i<size; i++){
+            arr[i] = output[i];
+        }
     }
 
 
