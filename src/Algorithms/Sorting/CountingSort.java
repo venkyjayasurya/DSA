@@ -6,15 +6,13 @@ package Algorithms.Sorting;
 *   Counting the elements having distinct key values
 *
 * Ex: 1 0 2 1 0 1 1 5 6 7 5 4 2 2 0 0 1
-* n = 17
+* n = 17    => total elements
 * Range is from 0 to 7 => the array contains 0 to 7 numbers that is range
 * therefore K = 7
 *
 * range case 1 => 0 <= arr[i] <= k
-* range case 2 => arr[i] belongs to Integer
-*
-*
-*
+*       case 2 => arr[i] belongs to Integer
+*   case 2 is not followed because Integers can be negative but counting sort is not applicable for negative numbers
 * */
 
 import java.util.Scanner;
