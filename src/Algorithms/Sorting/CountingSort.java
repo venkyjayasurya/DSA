@@ -39,6 +39,16 @@ public class CountingSort {
         int[] count = new int[max+1];
 
 //        Initializing count array with all zeros
+        for(int i=0; i<max; i++){
+            count[i] = 0;
+        }
+
+//        Storing the count of each element of the arr in the count array
+
+
+
+
+
 
     }
 
