@@ -12,6 +12,15 @@ package Algorithms.Sorting;
 
 public class RadixSort {
 
+    public static int getMax(int[] arr, int size){
+        int max = arr[0];
+        for(int i=0; i<size;i++){
+            if(a[i] > max)
+                max = a[i];
+        }
+        return max;
+    }
+
     public static void sort(int[] arr, int size){
 
     }
