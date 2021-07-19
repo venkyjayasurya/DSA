@@ -32,32 +32,39 @@ public class RadixSort {
         return max;
     }
 
-    public static void countSort(int[] arr, int size, int pos){
-        int[] count = new int[size];
-        int[] temp = new int[size];
+    public static void countingSort(int[] arr, int size, int pos) {
+        int[] output = new int[size + 1];
+        int max = arr[0];
+        for (int i = 1; i < size; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        int[] count = new int[max + 1];
 
-//        Initialize count array to 0
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < max; i++) {
             count[i] = 0;
-
-//        Calculate count of each elements
-        for(int i=0; i<size; i++){
-            ++count[(arr[i]/pos) % 10];
         }
 
-//        Calculate Cumulative Count i.e., add current element (i) with previous element (i-1) in the count array
-        for(int i=1; i < 10; i++){
-            count[i] += count[i-1];
+        // Calculate count of elements
+        for (int i = 0; i < size; i++) {
+            count[(arr[i] / pos) % 10]++;
         }
 
-//        Place the elements in the sorted array wrt to the digit position
-        for(int i=size-1; i>=0 ; i--){
-            temp[++count[(arr[i]/pos) % 10]] = arr[i];
+        // Calculate cumulative count
+        for (int i = 1; i < 10; i++) {
+            count[i] += count[i - 1];
         }
 
-//        Copy all elements from temp to original array(arr)
-        for(int i=0; i< size; i++) {
-            arr[i] = temp[i];
+        // place the elements in sorted order
+        for (int i = size - 1; i >= 0; i--) {
+            output[count[(arr[i] / pos) % 10] - 1] = arr[i];
+            count[(arr[i] / pos) % 10]--;
+        }
+
+//        Copy all elements from temp to original array
+        for (int i = 0; i < size; i++) {
+            arr[i] = output[i];
         }
     }
 
@@ -66,14 +73,20 @@ public class RadixSort {
         int max = getMax(arr, size);
 
 //        Apply Counting Sort to the sort elements based on place values
-        for(int pos = 1; (max/pos)>0; pos *= 10){
-            countSort(arr, size, pos);
+        for (int pos = 1; max / pos > 0; pos *= 10){
+            countingSort(arr, size, pos);
         }
     }
 
+    public static void printArray(int[] arr) {
+        for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+    }
+
     public static void main(String[] args){
-    int[] arr = {678, 1111, 234, 980, 142, 4};
+    int[] arr = {121, 432, 564, 23, 1, 45, 788};
     int size = arr.length;
+
     sort(arr, size);
     }
 }
