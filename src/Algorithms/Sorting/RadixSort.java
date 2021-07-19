@@ -22,7 +22,11 @@ public class RadixSort {
     }
 
     public static void sort(int[] arr, int size){
+        int max = getMax(arr, size);
 
+        for(int pos = 1; max/pos>0; pos*10){
+            countSort(Arr, size, pos);
+        }
     }
 
     public static void main(String[] args){
