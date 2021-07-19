@@ -11,6 +11,11 @@ package Algorithms.Sorting;
 * */
 
 public class RadixSort {
+
+    public static void sort(int[] arr, int size){
+
+    }
+
     public static void main(String[] args){
     int[] arr = {678, 1111, 234, 980, 142, 4};
     int size = arr.length;
