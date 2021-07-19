@@ -20,6 +20,8 @@ Radix sort is implemented in
 *
 * */
 
+import java.util.Scanner;
+
 public class RadixSort {
 
 //    Function to get the largest element from an array
@@ -84,11 +86,21 @@ public class RadixSort {
     }
 
     public static void main(String[] args){
-    int[] arr = {121, 432, 564, 23, 1, 45, 788};
-    int size = arr.length;
-    printArray(arr);
-    sort(arr, size);
-    System.out.println("After Sorting:");
-    printArray(arr);
+
+//      int[] arr = {121, 432, 564, 23, 1, 45, 788};
+//      int size = arr.length;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter number of elements");
+        int size = in.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter elements");
+        for (int i = 0; i < size; i++) {
+            arr[i] = in.nextInt();
+        }
+        printArray(arr);
+        sort(arr, size);
+        System.out.println("After Sorting:");
+        printArray(arr);
     }
 }
