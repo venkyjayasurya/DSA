@@ -29,8 +29,11 @@ public class RadixSort {
     }
 
     public static void countSort(int[] arr, int size, int pos){
-        int count[10] = {0};
-        int[size] temp = {0};
+        int[] count = new int[size];
+        int[] temp = new int[size];
+
+        for (int i = 0; i < size; i++)
+            count[i] = 0;
 
         for(int i=0; i<size; i++){
             ++count[(arr[i]/pos) % 10];
