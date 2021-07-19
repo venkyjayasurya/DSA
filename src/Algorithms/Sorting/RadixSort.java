@@ -15,8 +15,8 @@ public class RadixSort {
     public static int getMax(int[] arr, int size){
         int max = arr[0];
         for(int i=0; i<size;i++){
-            if(a[i] > max)
-                max = a[i];
+            if(arr[i] > max)
+                max = arr[i];
         }
         return max;
     }
