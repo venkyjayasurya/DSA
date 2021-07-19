@@ -48,8 +48,10 @@ public class RadixSort {
     }
 
     public static void sort(int[] arr, int size){
+//        Get maximum element from the array
         int max = getMax(arr, size);
 
+//        Apply Counting Sort to the sort elements based on place values
         for(int pos = 1; (max/pos)>0; pos *= 10){
             countSort(arr, size, pos);
         }
