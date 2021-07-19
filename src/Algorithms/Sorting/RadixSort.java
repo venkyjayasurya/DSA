@@ -18,6 +18,7 @@ package Algorithms.Sorting;
 
 public class RadixSort {
 
+//    Function to get the largest element from an array
     public static int getMax(int[] arr, int size){
         int max = arr[0];
         for(int i=0; i<size;i++){
