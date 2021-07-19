@@ -10,9 +10,13 @@ package Algorithms.Sorting;
 * and make all the numbers to the same size say make all the elements of 3 digits size
 *
 *
-* Time Complexity: O(d*n+k)
-*
-* Space Complexity: O(n+k)
+*   Time Complexity: O(d*(n+k))
+*   Space Complexity: O(n+k)
+
+## Radix Sort Applications
+Radix sort is implemented in
+    DC3 algorithm (Kärkkäinen-Sanders-Burkhardt) while making a suffix array.
+    places where there are numbers in large ranges.
 *
 * */
 
@@ -32,23 +36,29 @@ public class RadixSort {
         int[] count = new int[size];
         int[] temp = new int[size];
 
+//        Initialize count array to 0
         for (int i = 0; i < size; i++)
             count[i] = 0;
 
+//        Calculate count of each elements
         for(int i=0; i<size; i++){
             ++count[(arr[i]/pos) % 10];
         }
 
+//        Calculate Cumulative Count i.e., add current element (i) with previous element (i-1) in the count array
         for(int i=1; i < 10; i++){
             count[i] += count[i-1];
         }
 
+//        Place the elements in the sorted array wrt to the digit position
         for(int i=size-1; i>=0 ; i--){
             temp[++count[(arr[i]/pos) % 10]] = arr[i];
         }
 
-        for(i=0; i<n; i++)
+//        Copy all elements from temp to original array(arr)
+        for(int i=0; i< size; i++) {
             arr[i] = temp[i];
+        }
     }
 
     public static void sort(int[] arr, int size){
