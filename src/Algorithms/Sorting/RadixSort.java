@@ -86,7 +86,9 @@ public class RadixSort {
     public static void main(String[] args){
     int[] arr = {121, 432, 564, 23, 1, 45, 788};
     int size = arr.length;
-
+    printArray(arr);
     sort(arr, size);
+    System.out.println("After Sorting:");
+    printArray(arr);
     }
 }
