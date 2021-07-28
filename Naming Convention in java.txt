@@ -1,5 +1,5 @@
 It is mandatory to follow camel case
-Ex.  stockPrice, sName, studentRollNo etc.
+Ex. stockPrice, sName, studentRollNo etc.
 
 Variable abc --> Follow Camel Case
 Constant ABC --> All letter capital
