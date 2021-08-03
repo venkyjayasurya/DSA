@@ -39,7 +39,7 @@ public class PvrAnniversary {
             int TotalCost = obj.TotalTicketPrice(NoOfTickets);
             System.out.println("Total Cost = " + TotalCost);
         }else{
-            System.out.println("Thanks for the request, You cannot book tickets now!");
+            System.out.println("Thanks for your request, You cannot book tickets now!");
         }
     }
 }
