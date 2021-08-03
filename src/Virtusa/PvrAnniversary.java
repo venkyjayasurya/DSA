@@ -30,7 +30,7 @@ public class PvrAnniversary {
         }
         System.out.println("Do you have any special coupons");
         String coupons = sc.nextLine();
-        if(coupons == "y")){
+        if(coupons.equals("y")){
             cost -= (cost/100 * 8);
         }
         return cost;
@@ -46,6 +46,5 @@ public class PvrAnniversary {
         }else{
             System.out.println("Thanks for the request, You cannot book tickets now!");
         }
-
     }
 }
