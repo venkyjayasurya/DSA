@@ -22,16 +22,16 @@ public class PvrAnniversary {
         }else{
             cost = NoOfTickets * 120;
         }
-        cost -=  (cost/100 * 12);
+        cost = cost - (cost/100 * 12);
         System.out.println("Are you interested Refreshments or not");
         String refresh = sc.nextLine();
         if(refresh.equals("y")){
-            cost += 50;
+            cost = cost + 50;
         }
         System.out.println("Do you have any special coupons");
         String coupons = sc.nextLine();
         if(coupons.equals("y")){
-            cost -= (cost/100 * 8);
+            cost = cost - (cost/100 * 8);
         }
         return cost;
     }
