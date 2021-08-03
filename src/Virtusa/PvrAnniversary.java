@@ -18,7 +18,7 @@ public class PvrAnniversary {
         System.out.println("Are you interested Refreshments or not");
         String refresh = sc.nextLine();
         if(refresh.equals("y")){
-            int refreshCost = (50 * NoOfTickets);
+            refreshCost = (50 * NoOfTickets);
         }
         System.out.println("Do you have any special coupons");
         String coupons = sc.nextLine();
