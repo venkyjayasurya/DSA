@@ -33,6 +33,7 @@ public class PvrAnniversary {
         PvrAnniversary obj= new PvrAnniversary();
         System.out.println("PVR Anniversary");
         Scanner sc= new Scanner(System.in);
+        System.out.println("Enter Number of Tickets:");
         int NoOfTickets = sc.nextInt();
         if(NoOfTickets>4 && NoOfTickets<40){
             int TotalCost = obj.TotalTicketPrice(NoOfTickets);
