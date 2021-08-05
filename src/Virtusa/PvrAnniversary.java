@@ -12,6 +12,7 @@ public class PvrAnniversary {
 //            Cost = 75
             cost = NoOfTickets * 75;
         }else{
+            // Cost = 120 for premium
             cost = NoOfTickets * 120;
         }
         cost = cost - (cost/100 * 12);
